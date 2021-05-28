@@ -1,0 +1,22 @@
+{
+    "title": "",
+    "children": [
+        {
+            "type": "text-input",
+            "label": "Name of your bot",
+            "name": "bot-name"
+        },
+        {
+            "type": "text-input",
+            "label": "Bot description",
+            "name": "bot-description"
+        }
+    ],
+    "bottom-components": [
+        {
+            "type": "button",
+            "label": "Next",
+            "action": "next()"
+        }
+    ]
+}

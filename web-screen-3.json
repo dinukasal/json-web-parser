@@ -1,0 +1,31 @@
+{
+    "title": "",
+    "children": [
+        {
+            "type": "color-picker",
+            "name": "theme-color",
+            "label": "Theme color"
+        },
+        {
+            "label": "Avatar icon",
+            "type": "switch",
+        },
+        {
+            "type": "upload-button",
+            "label": "Upload avatar image",
+            "onclick": "upload()"
+        }
+    ],
+    "bottom-components": [
+        {
+            "type": "button",
+            "label": "Prev",
+            "onclick": "prev()"
+        },
+        {
+            "type": "button",
+            "label": "Next",
+            "onclick": "next()"
+        }
+    ]
+}

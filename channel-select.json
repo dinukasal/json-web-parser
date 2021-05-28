@@ -1,0 +1,23 @@
+{
+    "title": "Select Channel",
+    "children": [
+        {
+            "id": "web",
+            "type": "image-button",
+            "image-src": "http://sdsfsfsfd.jpg",
+            "onclick":""
+        },
+        {
+            "id": "social_media",
+            "type": "image-button",
+            "image-src": "http://sdsfsfsfd.jpg",
+            "onclick":""
+        },
+        {
+            "id": "web",
+            "type": "image-button",
+            "image-src": "http://sdsfsfsfd.jpg",
+            "onclick":""
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "title": "",
+    "children": [
+        {
+            "label": "Gender",
+            "type": "option-select",
+            "options": [
+                "Male",
+                "Female"
+            ],
+            "name": "gender"
+        },
+        {
+            "label": "Accent",
+            "type": "option-select",
+            "options": [
+                "British",
+                "US"
+            ],
+            "component-right": {
+                "type": "image-button",
+                "image-src": "http://sfsfsdf.jpg",
+                "onclick": "play(); //js function"
+            },
+            "name": "accent"
+        },
+        {
+            "label": "Custom Keywords",
+            "label-style": "font-size:16pt",
+            "type": "nested-object",
+            "children": [
+                {
+                    "type": "repititive-component",
+                    "children": [
+                        {
+                            "type": "text-input",
+                            "placeholder": "Enter the words",
+                            "name": "word-${i}"
+                        },
+                        {
+                            "type": "text-input-tag",
+                            "name": "sound-like-${i}"
+                        }
+                    ],
+                    "add-new-button": {
+                        "type": "a",
+                        "label": "+ Add Fields",
+                        "href": "addComponent()",
+                        "style": ""
+                    }
+                }
+            ]
+        }
+    ],
+    "bottom-components": [
+        {
+            "type": "button",
+            "label": "Prev",
+            "onclick": "prev()"
+        },
+        {
+            "type": "button",
+            "label": "Next",
+            "onclick": "next()"
+        }
+    ]
+}
