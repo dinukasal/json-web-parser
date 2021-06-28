@@ -42,7 +42,7 @@
                 "optional": ""
             }
         ],
-        "bottom-components": [
+        "bottomComponents": [
             {
                 "type": "button",
                 "label": "Next",
@@ -51,7 +51,7 @@
         ]
     },
     {
-        "title": "Web Configuration Page 1",
+        "title": "Configuration Page 1",
         "pageId": "voice-web-screen-1",
         "children": [
             {
@@ -71,36 +71,48 @@
                     "British",
                     "US"
                 ],
-                "component-right": {
+                "componentRight": {
                     "type": "image-button",
-                    "image-src": "http://sfsfsdf.jpg",
-                    "onclick": "play(); //js function"
+                    "image": "https://www.pngfind.com/pngs/m/427-4277341_add-play-button-to-image-online-overlay-play.png",
+                    "onclick": "console.log('play') //js function"
                 },
                 "name": "accent",
                 "optional": ""
             },
             {
                 "label": "Custom Keywords",
-                "label-style": "font-size:16pt",
+                "labelStyle": "font-size:16pt",
                 "type": "nested-object",
+                "id": "custom-keywords",
                 "children": [
                     {
                         "type": "repititive-component",
+                        "labels": [
+                            "Word",
+                            "Sound Like"
+                        ],
                         "children": [
                             {
                                 "type": "text-input",
                                 "placeholder": "Enter the words",
-                                "name": "word-${i}"
+                                "name": "word-${i}",
+                                "label": ""
                             },
                             {
-                                "type": "text-tag-input",
-                                "name": "sound-like-${i}"
+                                "type": "text-input",
+                                "name": "sound-like-${i}",
+                                "label": ""
+                            },
+                            {
+                                "type": "image-button",
+                                "image": "https://cdn2.vectorstock.com/i/1000x1000/16/41/close-button-icon-x-close-button-symbol-delete-vector-23841641.jpg",
+                                "onclick": "console.log('close')"
                             }
                         ],
-                        "add-new-button": {
+                        "addNewButton": {
                             "type": "a",
-                            "label": "+ Add Fields",
-                            "href": "addComponent()",
+                            "label": "Add Fields",
+                            "onclick": "addComponent()",
                             "style": ""
                         }
                     }
@@ -108,12 +120,7 @@
                 "optional": ""
             }
         ],
-        "bottom-components": [
-            {
-                "type": "button",
-                "label": "Prev",
-                "onclick": "prev()"
-            },
+        "bottomComponents": [
             {
                 "type": "button",
                 "label": "Next",
@@ -122,7 +129,7 @@
         ]
     },
     {
-        "title": "Web Configuration Page 2",
+        "title": "Configuration Page 2",
         "pageId": "web-screen-2",
         "children": [
             {
@@ -143,12 +150,7 @@
                 "optional": ""
             }
         ],
-        "bottom-components": [
-            {
-                "type": "button",
-                "label": "Prev",
-                "onclick": "prev()"
-            },
+        "bottomComponents": [
             {
                 "type": "button",
                 "label": "Next",
