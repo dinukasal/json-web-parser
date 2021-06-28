@@ -1,0 +1,159 @@
+[
+    {
+        "title": "Select Channel",
+        "pageId": "channel-select",
+        "children": [
+            {
+                "id": "web",
+                "type": "image-button",
+                "image": "https://cdn.icon-icons.com/icons2/1875/PNG/512/web_120072.png",
+                "onclick": ""
+            },
+            {
+                "id": "social_media",
+                "type": "image-button",
+                "image": "https://image.freepik.com/free-vector/abstract-social-media-icons-set_1055-4989.jpg",
+                "onclick": ""
+            },
+            {
+                "id": "telephony",
+                "type": "image-button",
+                "image": "https://image.shutterstock.com/image-vector/telepone-vector-icon-symbol-phone-260nw-1448347253.jpg",
+                "onclick": ""
+            }
+        ]
+    },
+    {
+        "title": "",
+        "pageId": "metadata",
+        "children": [
+            {
+                "type": "text-input",
+                "label": "Name of your bot",
+                "name": "bot-name",
+                "validator": "",
+                "optional": ""
+            },
+            {
+                "type": "text-input",
+                "label": "Bot description",
+                "name": "bot-description",
+                "validator": "",
+                "optional": ""
+            }
+        ],
+        "bottom-components": [
+            {
+                "type": "button",
+                "label": "Next",
+                "action": "next()"
+            }
+        ]
+    },
+    {
+        "title": "Web Configuration Page 1",
+        "pageId": "voice-web-screen-1",
+        "children": [
+            {
+                "label": "Gender",
+                "type": "option-select",
+                "options": [
+                    "Male",
+                    "Female"
+                ],
+                "name": "gender",
+                "optional": ""
+            },
+            {
+                "label": "Accent",
+                "type": "option-select",
+                "options": [
+                    "British",
+                    "US"
+                ],
+                "component-right": {
+                    "type": "image-button",
+                    "image-src": "http://sfsfsdf.jpg",
+                    "onclick": "play(); //js function"
+                },
+                "name": "accent",
+                "optional": ""
+            },
+            {
+                "label": "Custom Keywords",
+                "label-style": "font-size:16pt",
+                "type": "nested-object",
+                "children": [
+                    {
+                        "type": "repititive-component",
+                        "children": [
+                            {
+                                "type": "text-input",
+                                "placeholder": "Enter the words",
+                                "name": "word-${i}"
+                            },
+                            {
+                                "type": "text-tag-input",
+                                "name": "sound-like-${i}"
+                            }
+                        ],
+                        "add-new-button": {
+                            "type": "a",
+                            "label": "+ Add Fields",
+                            "href": "addComponent()",
+                            "style": ""
+                        }
+                    }
+                ],
+                "optional": ""
+            }
+        ],
+        "bottom-components": [
+            {
+                "type": "button",
+                "label": "Prev",
+                "onclick": "prev()"
+            },
+            {
+                "type": "button",
+                "label": "Next",
+                "onclick": "next()"
+            }
+        ]
+    },
+    {
+        "title": "Web Configuration Page 2",
+        "pageId": "web-screen-2",
+        "children": [
+            {
+                "type": "color-picker",
+                "name": "theme-color",
+                "label": "Theme color",
+                "optional": ""
+            },
+            {
+                "label": "Avatar icon",
+                "type": "switch",
+                "optional": ""
+            },
+            {
+                "type": "upload-button",
+                "label": "Upload avatar image",
+                "onclick": "upload()",
+                "optional": ""
+            }
+        ],
+        "bottom-components": [
+            {
+                "type": "button",
+                "label": "Prev",
+                "onclick": "prev()"
+            },
+            {
+                "type": "button",
+                "label": "Next",
+                "onclick": "next()"
+            }
+        ]
+    }
+]

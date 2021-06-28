@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="tabs">
+
+        <ul>
+            <li><a href="#channel-select">Channel Select</a></li>
+            <li><a href="#metadata">Metadata</a></li>
+            <li><a href="#voice-web-screen-1">Configuration Page 1</a></li>
+            <li><a href="#web-screen-2">Configuration Page 2</a></li>
+        </ul>
+
+    </div>
+    <script>
+
+        let html = "";
+
+        fetch("all-pages.json")
+            .then(response => response.json())
+            .then(json => {
+                console.log(json)
+                let channelSelect = '', metadataScreen = '', webScreen1 = '', webScreen2 = '';
+
+                for (let i in json) {
+                    if (json[i].pageId == 'channel-select') {
+                        channelSelect = parseSchema(json[i]);
+                    } else if (json[i].pageId == 'metadata') {
+                        metadataScreen = parseSchema(json[i]);
+                    } else if (json[i].pageId == 'voice-web-screen-1') {
+                        webScreen1 = parseSchema(json[i]);
+                    } else if (json[i].pageId == 'web-screen-2') {
+                        webScreen2 = parseSchema(json[i]);
+                    }
+                }
+
+                // console.log(channelSelect)
+                $('#tabs').append(channelSelect)
+                $('#tabs').append(metadataScreen)
+                $('#tabs').append(webScreen1)
+                $('#tabs').append(webScreen2)
+
+                $("#tabs").tabs();
+
+                $(function () {
+                    // $("#tabs").tabs();
+                    console.log('ok')
+                });
+            }).catch(err => {
+                console.error(err)
+            });
+
+
+        function parseSchema(schema) {
+            html = getElement({ type: 'title', id: 'title', title: schema.title });
+            // console.log(html)
+
+            for (let i in schema.children) {
+                let elem = schema.children[i];
+                // console.log(elem, getElement(elem));
+                html = `${html}<br>${getElement(elem)}`
+            }
+
+            html = $('<div />', { html, id: schema.pageId })
+            // let final = $(html).wrap('<div id="tabs"></div>')
+            console.log(html.prop('outerHTML'))
+            return html;
+        }
+
+
+        function getElement(data) {
+            console.log(data.type)
+            const schema = {
+                "title": {
+                    type: "title",
+                    html: `<h1 id='${data.id}'>${data.title}</h1>`
+                },
+                "button": {
+                    type: "button",
+                    html: `<button>${data.label}</button>`
+                },
+                "image-button": {
+                    type: "image-button",
+                    html: `<button style="background: #f0f0f0 url(${data.image}); background-repeat: no-repeat;background-size:100px 100px; height:100px;width:100px" id='${data.id}' onclick=${data.onclick}></button>`
+                },
+                "text-input": {
+                    type: "text-input",
+                    html: `<label>${data.label}</label><input id='${data.name}' name='${data.name}' type='text' />`
+                },
+                "color-picker": {
+                    type: "color-picker",
+                    html: ""
+                },
+                "upload-button": {
+                    type: "upload-button",
+                    html: ""
+                },
+                "switch": {
+                    type: "switch",
+                    html: ""
+                },
+                "option-select": {
+                    type: "option-select",
+                    html: ""
+                },
+                "repititive-component": {
+                    type: "repititive-component",
+                    html: ""
+                },
+                "text-tag-input": {
+                    type: "text-tag-input",
+                    html: ""
+                },
+                "a": {
+                    type: "a",
+                    html: "<a></a>"
+                },
+                "nested-object": {
+                    html: ""
+                }
+            }
+            return schema[data.type].html;
+        }
+
+    </script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            font-size: 1em;
+        }
+
+        .ui-draggable,
+        .ui-droppable {
+            background-position: top;
+        }
+    </style>
+</body>
+
+</html>

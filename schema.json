@@ -1,10 +1,50 @@
 {
-    "page": {
-        "title": "",
-        "children": "",
-        "bottom-components": []
+    "title": {
+        "type": "title",
+        "html": "<h1></h1>"
     },
-    "button": {},
-    "image-button": {},
-    "text-input": {},
+    "button": {
+        "type": "button",
+        "html": "<button></button>"
+    },
+    "image-button": {
+        "type": "image-button",
+        "html": "<button></button>"
+    },
+    "text-input": {
+        "type": "text-input",
+        "html": "<input type='text' />'"
+    },
+    "color-picker": {
+        "type": "color-picker",
+        "html": ""
+    },
+    "upload-button": {
+        "type": "upload-button",
+        "html": ""
+    },
+    "switch": {
+        "type": "switch",
+        "html": ""
+    },
+    "option-select": {
+        "type": "option-select",
+        "html": ""
+    },
+    "image-button": {
+        "type": "image-button",
+        "html": ""
+    },
+    "repititive-component": {
+        "type": "repititive-component",
+        "html": ""
+    },
+    "text-tag-input": {
+        "type": "text-tag-input",
+        "html": ""
+    },
+    "a": {
+        "type": "a",
+        "html": "<a></a>"
+    }
 }

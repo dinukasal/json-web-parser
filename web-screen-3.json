@@ -4,16 +4,19 @@
         {
             "type": "color-picker",
             "name": "theme-color",
-            "label": "Theme color"
+            "label": "Theme color",
+            "optional":""
         },
         {
             "label": "Avatar icon",
             "type": "switch",
+            "optional":""
         },
         {
             "type": "upload-button",
             "label": "Upload avatar image",
-            "onclick": "upload()"
+            "onclick": "upload()",
+            "optional":""
         }
     ],
     "bottom-components": [

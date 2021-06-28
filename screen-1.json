@@ -4,12 +4,16 @@
         {
             "type": "text-input",
             "label": "Name of your bot",
-            "name": "bot-name"
+            "name": "bot-name",
+            "validator":"",
+            "optional":""
         },
         {
             "type": "text-input",
             "label": "Bot description",
-            "name": "bot-description"
+            "name": "bot-description",
+            "validator":"",
+            "optional":""
         }
     ],
     "bottom-components": [

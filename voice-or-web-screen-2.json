@@ -8,7 +8,8 @@
                 "Male",
                 "Female"
             ],
-            "name": "gender"
+            "name": "gender",
+            "optional":""
         },
         {
             "label": "Accent",
@@ -22,7 +23,8 @@
                 "image-src": "http://sfsfsdf.jpg",
                 "onclick": "play(); //js function"
             },
-            "name": "accent"
+            "name": "accent",
+            "optional":""
         },
         {
             "label": "Custom Keywords",
@@ -38,7 +40,7 @@
                             "name": "word-${i}"
                         },
                         {
-                            "type": "text-input-tag",
+                            "type": "text-tag-input",
                             "name": "sound-like-${i}"
                         }
                     ],
@@ -49,7 +51,8 @@
                         "style": ""
                     }
                 }
-            ]
+            ],
+            "optional":""
         }
     ],
     "bottom-components": [

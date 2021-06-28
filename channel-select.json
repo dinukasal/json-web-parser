@@ -4,19 +4,19 @@
         {
             "id": "web",
             "type": "image-button",
-            "image-src": "http://sdsfsfsfd.jpg",
+            "image": "https://cdn.icon-icons.com/icons2/1875/PNG/512/web_120072.png",
             "onclick":""
         },
         {
             "id": "social_media",
             "type": "image-button",
-            "image-src": "http://sdsfsfsfd.jpg",
-            "onclick":""
+            "image": "https://image.freepik.com/free-vector/abstract-social-media-icons-set_1055-4989.jpg",
+            "onclick":"media'"
         },
         {
-            "id": "web",
+            "id": "telephony",
             "type": "image-button",
-            "image-src": "http://sdsfsfsfd.jpg",
+            "image": "https://image.shutterstock.com/image-vector/telepone-vector-icon-symbol-phone-260nw-1448347253.jpg",
             "onclick":""
         }
     ]
