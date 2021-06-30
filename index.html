@@ -9,18 +9,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 </head>
 
 <body>
     <div id="header"></div>
     <div id="tabs">
 
-        <ul>
+        <!-- <ul>
             <li><a href="#channel-select">Channel Select</a></li>
             <li><a href="#metadata">Metadata</a></li>
             <li><a href="#voice-web-screen-1">Configuration Page 1</a></li>
             <li><a href="#web-screen-2">Configuration Page 2</a></li>
-        </ul>
+        </ul> -->
 
     </div>
     <script>
@@ -33,23 +34,26 @@
                 console.log(json)
                 let channelSelect = '', metadataScreen = '', webScreen1 = '', webScreen2 = '';
 
-                for (let i in json) {
-                    if (json[i].pageId == 'channel-select') {
-                        channelSelect = parseSchema(json[i]);
-                    } else if (json[i].pageId == 'metadata') {
-                        metadataScreen = parseSchema(json[i]);
-                    } else if (json[i].pageId == 'voice-web-screen-1') {
-                        webScreen1 = parseSchema(json[i]);
-                    } else if (json[i].pageId == 'web-screen-2') {
-                        webScreen2 = parseSchema(json[i]);
-                    }
-                }
+                let webPageIds = ['channel-select', 'metadata', 'voice-web-screen-1', 'web-screen-2'];
+                let voicePageIds = []
 
-                // console.log(channelSelect)
-                $('#tabs').append(channelSelect)
-                $('#tabs').append(metadataScreen)
-                $('#tabs').append(webScreen1)
-                $('#tabs').append(webScreen2)
+                let nav = '<ul>';
+                webPageIds.forEach(pg => {
+                    nav += `<li><a href='#${pg}'>${_.filter(json, i => i.pageId == pg)[0].title}</a></li>`;
+                })
+                nav += '</ul>'
+                $('#tabs').append(nav)
+
+                for (let i in json) {
+                    webPageIds.forEach(pg => {
+                        if (json[i].pageId == pg) {
+                            let parsed = parseSchema(json[i]);
+                            // console.log(parsed)
+                            $('#tabs').append(parsed)
+                        }
+                    })
+
+                }
 
                 $("#tabs").tabs();
 
@@ -166,6 +170,10 @@
                 },
                 "nested-object": {
                     html: `${data.children ? getElement(data.children[0]) : ''}`
+                },
+                "color-picker": {
+                    html: `<div class="row"><label for="exampleColorInput" class="form-label">${data.label}</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color"></div>`
                 }
 
             }

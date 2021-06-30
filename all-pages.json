@@ -24,7 +24,7 @@
         ]
     },
     {
-        "title": "",
+        "title": "Metadata",
         "pageId": "metadata",
         "children": [
             {
@@ -139,6 +139,12 @@
                 "optional": ""
             },
             {
+                "type": "color-picker",
+                "name": "theme-color2",
+                "label": "Theme color 2",
+                "optional": ""
+            },
+            {
                 "label": "Avatar icon",
                 "type": "switch",
                 "optional": ""
@@ -146,9 +152,31 @@
             {
                 "type": "upload-button",
                 "label": "Upload avatar image",
-                "onclick": "upload()",
+                "onclick": "console.log('upload')",
+                "optional": ""
+            },
+            {
+                "type": "text-input",
+                "label": "Title Phrase",
+                "name": "title-phrase",
+                "validator": "",
+                "optional": ""
+            },
+            {
+                "type": "text-input",
+                "label": "Sub Title Phrase",
+                "name": "sub-title-phrase",
+                "validator": "",
+                "optional": ""
+            },
+            {
+                "type": "text-input",
+                "label": "Description",
+                "name": "description",
+                "validator": "",
                 "optional": ""
             }
+            
         ],
         "bottomComponents": [
             {
