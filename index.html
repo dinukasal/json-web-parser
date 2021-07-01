@@ -120,13 +120,16 @@
                     html: `<h1 id='${data.id}'>${data.title}</h1>`
                 },
                 "button": {
-                    html: `<button onclick="${data.action}">${data.label}</button>`
+                    html: `<button type="button" class="btn btn-primary" onclick="${data.action}">${data.label}</button>`
                 },
                 "image-button": {
                     html: `<button style="background: #f0f0f0 url(${data.image}); background-repeat: no-repeat;background-size:100px 100px; height:100px;width:100px" id='${data.id}' onclick=${data.onclick}></button>`
                 },
                 "text-input": {
-                    html: `<label>${data.label}</label><input id='${data.name}' name='${data.name}' type='text' />`
+                    html: `  <div class="mb-3">
+                        <label for="${data.name}" class="form-label">${data.label}</label>
+                        <input type="text" class="form-control" id="${data.name}" aria-describedby="emailHelp">
+                        </div>`
                 },
                 "color-picker": {
                     html: ""
@@ -184,11 +187,20 @@
                     </div>`
                 },
                 "info-field": {
-                    html: ``
+                    html: `<div class="mb-3">
+                    <label for="${data.name}" class="form-label">Disabled input</label>
+                    <input type="text" id="${data.name}" class="form-control" placeholder="" value="${data.text}" disabled>
+                    </div>`
                 },
                 "password-input": {
-                    html: ``
+                    html: `<div class="mb-3">
+                        <label for="${data.name}" class="form-label">${data.label}</label>
+                        <input type="password" class="form-control" id="${data.name}">
+                    </div>`
                 },
+                "p": {
+                    html: `<p>${data.text}</p>`
+                }
 
             }
             return schema[data.type] ? schema[data.type].html : '';

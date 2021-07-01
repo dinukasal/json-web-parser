@@ -291,6 +291,7 @@
                 "type": "info-field",
                 "label": "IP Address",
                 "name": "deployment-ip-address",
+                "text": "123.152.121.12",
                 "validator": "",
                 "optional": ""
             },
@@ -317,6 +318,7 @@
                 "type": "info-field",
                 "label": "Callback url",
                 "name": "callback-url",
+                "text": "https://cognius.telephony",
                 "validator": "",
                 "optional": ""
             },
