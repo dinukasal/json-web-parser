@@ -280,10 +280,6 @@
         "pageId": "view-deployment",
         "children": [
             {
-                "type": "h3",
-                "text": "View Deployment"
-            },
-            {
                 "type": "p",
                 "text": "Whitelist this IP address and credentials in your SIP trunk provider"
             },
