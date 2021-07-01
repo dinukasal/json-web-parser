@@ -74,19 +74,17 @@
 
             for (let i in schema.children) {
                 let elem = schema.children[i];
-                console.log(elem, getElement(elem));
                 html = `${html}<br>${getElement(elem)}`
             }
             html += `<br>`
             for (let i in schema.bottomComponents) {
                 let elem = schema.bottomComponents[i];
-                console.log(elem, getElement(elem));
                 html = `${html}${getElement(elem)}`
             }
 
             html = $('<div />', { html, id: schema.pageId })
             // let final = $(html).wrap('<div id="tabs"></div>')
-            console.log(html.prop('outerHTML'))
+            // console.log(html.prop('outerHTML'))
             return html;
         }
 
