@@ -46,7 +46,7 @@
             {
                 "type": "button",
                 "label": "Next",
-                "action": "next()"
+                "onclick": "next()"
             }
         ]
     },
@@ -124,7 +124,7 @@
             {
                 "type": "button",
                 "label": "Next",
-                "onclick": "next()"
+                "onclick": "$('#tabs').tabs({active:3})"
             }
         ]
     },
@@ -181,7 +181,7 @@
             {
                 "type": "button",
                 "label": "Deploy",
-                "onclick": "console.log('deploy')"
+                "onclick": "$('#tabs').tabs({active:4})"
             }
         ]
     },
@@ -232,7 +232,7 @@
             {
                 "type": "button",
                 "label": "Next",
-                "action": "$('#tabs').tabs({active:4})"
+                "onclick": "$('#tabs').tabs({active:4})"
             }
         ]
     },
@@ -271,7 +271,7 @@
             {
                 "type": "button",
                 "label": "Deploy",
-                "action": "$('#tabs').tabs({active:5})"
+                "onclick": "$('#tabs').tabs({active:5})"
             }
         ]
     },
@@ -330,7 +330,7 @@
             {
                 "type": "button",
                 "label": "Finish",
-                "action": "console.log('finish telephony deployment')"
+                "onclick": "console.log('finish telephony deployment')"
             }
         ]
     }
