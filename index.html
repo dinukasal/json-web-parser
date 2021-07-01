@@ -27,6 +27,7 @@
     <script>
 
         let html = "";
+        let flow = "telephony"; //web, telephony, socialMedia
 
         fetch("all-pages.json")
             .then(response => response.json())
@@ -34,25 +35,26 @@
                 console.log(json)
                 let channelSelect = '', metadataScreen = '', webScreen1 = '', webScreen2 = '';
 
-                let webPageIds = ['channel-select', 'metadata', 'voice-web-screen-1', 'web-screen-2'];
-                let voicePageIds = []
+                let pageIds = {
+                    'web': ['channel-select', 'metadata', 'voice-web-screen-1', 'web-screen-2', 'web-last-screen'],
+                    'telephony': ['channel-select', 'metadata', 'voice-web-screen-1', 'channel-config', 'provider-config', 'view-deployment']
+                };
 
                 let nav = '<ul>';
-                webPageIds.forEach(pg => {
+                pageIds[flow].forEach(pg => {
                     nav += `<li><a href='#${pg}'>${_.filter(json, i => i.pageId == pg)[0].title}</a></li>`;
                 })
                 nav += '</ul>'
                 $('#tabs').append(nav)
 
                 for (let i in json) {
-                    webPageIds.forEach(pg => {
+                    pageIds[flow].forEach(pg => {
                         if (json[i].pageId == pg) {
                             let parsed = parseSchema(json[i]);
                             // console.log(parsed)
                             $('#tabs').append(parsed)
                         }
                     })
-
                 }
 
                 $("#tabs").tabs();
@@ -118,7 +120,7 @@
                     html: `<h1 id='${data.id}'>${data.title}</h1>`
                 },
                 "button": {
-                    html: `<button>${data.label}</button>`
+                    html: `<button onclick="${data.action}">${data.label}</button>`
                 },
                 "image-button": {
                     html: `<button style="background: #f0f0f0 url(${data.image}); background-repeat: no-repeat;background-size:100px 100px; height:100px;width:100px" id='${data.id}' onclick=${data.onclick}></button>`
@@ -173,11 +175,23 @@
                 },
                 "color-picker": {
                     html: `<div class="row"><label for="exampleColorInput" class="form-label">${data.label}</label>
-<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color"></div>`
-                }
+                    <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color"></div>`
+                },
+                "code-snippet": {
+                    html: `<div class="form-outline">
+                    <textarea class="form-control" id="textAreaExample1" rows="4">${data.code}</textarea>
+                    <label class="form-label" for="textAreaExample">Copy this and pase in your website</label>
+                    </div>`
+                },
+                "info-field": {
+                    html: ``
+                },
+                "password-input": {
+                    html: ``
+                },
 
             }
-            return schema[data.type].html;
+            return schema[data.type] ? schema[data.type].html : '';
         }
 
     </script>

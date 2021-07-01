@@ -129,7 +129,7 @@
         ]
     },
     {
-        "title": "Configuration Page 2",
+        "title": "Deploy",
         "pageId": "web-screen-2",
         "children": [
             {
@@ -176,13 +176,163 @@
                 "validator": "",
                 "optional": ""
             }
-            
+        ],
+        "bottomComponents": [
+            {
+                "type": "button",
+                "label": "Deploy",
+                "onclick": "console.log('deploy')"
+            }
+        ]
+    },
+    {
+        "title": "View Deployment",
+        "pageId": "web-last-screen",
+        "children": [
+            {
+                "type": "code-snippet",
+                "code": "<script>Cognius.init()</script>"
+            }
+        ],
+        "bottomComponents": [
+            {
+                "type": "button",
+                "label": "Finish",
+                "onclick": "console.log('finish')"
+            }
+        ]
+    },
+    {
+        "title": "Channel Config",
+        "pageId": "channel-config",
+        "children": [
+            {
+                "type": "text-input",
+                "label": "SIP URL",
+                "name": "sip-url",
+                "validator": "",
+                "optional": ""
+            },
+            {
+                "type": "text-input",
+                "label": "Forwarding SIP URL",
+                "name": "forwarding-sip-url",
+                "validator": "",
+                "optional": ""
+            },
+            {
+                "type": "text-input",
+                "label": "Phone Number",
+                "name": "phone-number",
+                "validator": "",
+                "optional": ""
+            }
         ],
         "bottomComponents": [
             {
                 "type": "button",
                 "label": "Next",
-                "onclick": "next()"
+                "action": "$('#tabs').tabs({active:4})"
+            }
+        ]
+    },
+    {
+        "title": "Provider Config",
+        "pageId": "provider-config",
+        "children": [
+            {
+                "type": "text-input",
+                "label": "Custom SIP trunk IP Address",
+                "name": "ip-address",
+                "validator": "",
+                "optional": ""
+            },
+            {
+                "type": "info-field",
+                "label": "Username",
+                "name": "username",
+                "validator": "",
+                "optional": ""
+            },
+            {
+                "type": "password-input",
+                "label": "Password",
+                "name": "password",
+                "validator": "",
+                "optional": "",
+                "componentRight": {
+                    "type": "image-button",
+                    "image": "https://banner2.cleanpng.com/20180331/wgw/kisspng-computer-icons-encapsulated-postscript-eye-5abfee7875d346.6686483415225278644826.jpg",
+                    "onclick": "console.log('play') //js function"
+                }
+            }
+        ],
+        "bottomComponents": [
+            {
+                "type": "button",
+                "label": "Deploy",
+                "action": "$('#tabs').tabs({active:5})"
+            }
+        ]
+    },
+    {
+        "title": "View Deployment",
+        "pageId": "view-deployment",
+        "children": [
+            {
+                "type": "h3",
+                "text": "View Deployment"
+            },
+            {
+                "type": "p",
+                "text": "Whitelist this IP address and credentials in your SIP trunk provider"
+            },
+            {
+                "type": "info-field",
+                "label": "IP Address",
+                "name": "deployment-ip-address",
+                "validator": "",
+                "optional": ""
+            },
+            {
+                "type": "text-input",
+                "label": "Username",
+                "name": "username",
+                "validator": "",
+                "optional": ""
+            },
+            {
+                "type": "password-input",
+                "label": "Password",
+                "name": "password",
+                "validator": "",
+                "optional": "",
+                "componentRight": {
+                    "type": "image-button",
+                    "image": "https://banner2.cleanpng.com/20180331/wgw/kisspng-computer-icons-encapsulated-postscript-eye-5abfee7875d346.6686483415225278644826.jpg",
+                    "onclick": "console.log('play') //js function"
+                }
+            },
+            {
+                "type": "info-field",
+                "label": "Callback url",
+                "name": "callback-url",
+                "validator": "",
+                "optional": ""
+            },
+            {
+                "type": "text-input",
+                "label": "Phone Number",
+                "name": "test-call-phone-number",
+                "validator": "",
+                "optional": ""
+            }
+        ],
+        "bottomComponents": [
+            {
+                "type": "button",
+                "label": "Finish",
+                "action": "console.log('finish telephony deployment')"
             }
         ]
     }
