@@ -333,5 +333,73 @@
                 "onclick": "console.log('finish telephony deployment')"
             }
         ]
+    },
+    {
+        "title": "Social Media",
+        "pageId": "social-media",
+        "children": [
+            {
+                "type": "h3",
+                "text": "Select the platform"
+            },
+            {
+                "type": "image-button",
+                "image": "https://w7.pngwing.com/pngs/672/164/png-transparent-whatsapp-icon-whatsapp-logo-computer-icons-zubees-halal-foods-whatsapp-text-circle-unified-payments-interface.png",
+                "onclick": ""
+            },
+            {
+                "type": "image-button",
+                "image": "https://i.pinimg.com/736x/ad/4a/67/ad4a67a25bc3732713de694a782d441b.jpg",
+                "onclick": ""
+            },
+            {
+                "type": "h3",
+                "text": "Select the provider"
+            },
+            {
+                "type": "radio-select",
+                "text": "Gupshup",
+                "name": "providerSelect",
+                "value": "gupshup"
+            },
+            {
+                "type": "radio-select",
+                "text": "Twilio",
+                "name": "providerSelect",
+                "value": "twilio"
+            }
+        ],
+        "bottomComponents": [
+            {
+                "type": "button",
+                "label": "Next",
+                "onclick": "$('#tabs').tabs({active:1})"
+            }
+        ]
+    },
+    {
+        "title": "View Deployment",
+        "pageId": "sm-last-screen",
+        "children": [
+            {
+                "type": "h4",
+                "text": "Set this callback URL in {GupShup/Twilio}"
+            },
+            {
+                "type": "info-field",
+                "label": "Callback url",
+                "name": "sm-callback-url",
+                "text": "https://cognius.ai/deployment?id=123",
+                "validator": "",
+                "optional": ""
+            }
+        ],
+        "bottomComponents": [
+            {
+                "type": "button",
+                "label": "Next",
+                "onclick": "$('#tabs').tabs({active:1})"
+            }
+        ]
     }
 ]

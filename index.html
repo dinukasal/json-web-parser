@@ -14,20 +14,11 @@
 
 <body>
     <div id="header"></div>
-    <div id="tabs">
-
-        <!-- <ul>
-            <li><a href="#channel-select">Channel Select</a></li>
-            <li><a href="#metadata">Metadata</a></li>
-            <li><a href="#voice-web-screen-1">Configuration Page 1</a></li>
-            <li><a href="#web-screen-2">Configuration Page 2</a></li>
-        </ul> -->
-
-    </div>
+    <div id="tabs"></div>
     <script>
 
         let html = "";
-        let flow = "telephony"; //web, telephony, socialMedia
+        let flow = "social-media"; //web, telephony, socialMedia
 
         fetch("all-pages.json")
             .then(response => response.json())
@@ -37,7 +28,8 @@
 
                 let pageIds = {
                     'web': ['channel-select', 'metadata', 'voice-web-screen-1', 'web-screen-2', 'web-last-screen'],
-                    'telephony': ['channel-select', 'metadata', 'voice-web-screen-1', 'channel-config', 'provider-config', 'view-deployment']
+                    'telephony': ['channel-select', 'metadata', 'voice-web-screen-1', 'channel-config', 'provider-config', 'view-deployment'],
+                    'social-media': ['social-media', 'metadata', 'sm-last-screen']
                 };
 
                 let nav = '<ul>';
@@ -171,6 +163,9 @@
                 "h3": {
                     html: `<h3>${data.text}</h3>`
                 },
+                "h4": {
+                    html: `<h4>${data.text}</h4>`
+                },
                 "nested-object": {
                     html: `${data.children ? getElement(data.children[0]) : ''}`
                 },
@@ -198,6 +193,14 @@
                 },
                 "p": {
                     html: `<p>${data.text}</p>`
+                },
+                "radio-select": {
+                    html: `<div class="form-check">
+                    <input class="form-check-input" type="radio" name="${data.name}" id="${data.value}" value="${data.value}" checked>
+                    <label class="form-check-label" for="${data.value}">
+                        ${data.text}
+                    </label>
+                    </div>`
                 }
 
             }
