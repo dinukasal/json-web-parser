@@ -18,7 +18,7 @@
     <script>
 
         let html = "";
-        let flow = "social-media"; //web, telephony, socialMedia
+        let flow = "web"; //web, telephony, socialMedia
 
         fetch("all-pages.json")
             .then(response => response.json())
@@ -114,6 +114,14 @@
                 },
                 "image-button": {
                     html: `<button style="background: #f0f0f0 url(${data.image}); background-repeat: no-repeat;background-size:100px 100px; height:100px;width:100px" id='${data.id}' onclick=${data.onclick}></button>`
+                },
+                "image-button-component": {
+                    html: `<div class="col-md-3 channelDiv">
+					 		<a href="${data.onclick}" class="channels">
+								<img src="${data.image}" style="width:63px; height: auto" alt="web channel">
+								<p>${data.text}</p>
+							</a>
+						</div>`
                 },
                 "text-input": {
                     html: `  <div class="mb-3">

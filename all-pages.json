@@ -5,20 +5,23 @@
         "children": [
             {
                 "id": "web",
-                "type": "image-button",
+                "type": "image-button-component",
                 "image": "https://cdn.icon-icons.com/icons2/1875/PNG/512/web_120072.png",
+                "text": "Build a conversational bot and place on your website to be in touch with customers",
                 "onclick": ""
             },
             {
                 "id": "social_media",
-                "type": "image-button",
+                "type": "image-button-component",
                 "image": "https://image.freepik.com/free-vector/abstract-social-media-icons-set_1055-4989.jpg",
+                "text": "Build a conversational bot and place on your website to be in touch with customers",
                 "onclick": ""
             },
             {
                 "id": "telephony",
-                "type": "image-button",
+                "type": "image-button-component",
                 "image": "https://image.shutterstock.com/image-vector/telepone-vector-icon-symbol-phone-260nw-1448347253.jpg",
+                "text": "Build a conversational bot and place on your website to be in touch with customers",
                 "onclick": ""
             }
         ]
