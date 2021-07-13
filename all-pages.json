@@ -32,15 +32,15 @@
         "children": [
             {
                 "type": "text-input",
-                "label": "Name of your bot",
-                "name": "bot-name",
+                "label": "Name of your deployment",
+                "name": "deployment-name",
                 "validator": "",
                 "optional": ""
             },
             {
                 "type": "text-input",
-                "label": "Bot description",
-                "name": "bot-description",
+                "label": "Deployment description",
+                "name": "deployment-description",
                 "validator": "",
                 "optional": ""
             }
